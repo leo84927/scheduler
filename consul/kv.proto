@@ -1,0 +1,67 @@
+syntax = "proto3";
+
+package leo84927.scheduler.v1;
+option go_package = "scheduler/consul;consul";
+
+enum GlobalEnvKey {
+    GLOBAL_TIMEZONE = 0;                            // Asia/Taipei
+    GLOBAL_RABBITMQ_USER = 1;                       //
+    GLOBAL_RABBITMQ_PASSWORD = 2;                   //
+    GLOBAL_RABBITMQ_HOST = 3;                       // rabbitmq
+    GLOBAL_RABBITMQ_PORT = 4;                       // 5672
+    GLOBAL_RABBITMQ_VHOST = 5;                      // job
+    GLOBAL_RABBITMQ_JOB_EXCHANGE = 6;               // job.exchange
+    GLOBAL_RABBITMQ_EXCHANGE_KIND = 7;              // topic
+    GLOBAL_RABBITMQ_CONN_MAX_RETRIES = 8;           // 5
+    GLOBAL_RABBITMQ_CONN_MAX_ELAPSED_TIME = 9;      // 20s
+    GLOBAL_RABBITMQ_TOPOLOGY_MAX_RETRIES = 10;      // 3
+    GLOBAL_RABBITMQ_TOPOLOGY_MAX_ELAPSED_TIME = 11; // 20s
+    GLOBAL_ALLOY_HOST = 12;                         // alloy
+    GLOBAL_ALLOY_PORT = 13;                         // 4317
+    GLOBAL_MARIADB_USER = 14;                       //
+    GLOBAL_MARIADB_PASSWORD = 15;                   //
+    GLOBAL_MARIADB_PRIMARY_HOST = 16;               // mariadb-primary
+    GLOBAL_MARIADB_REPLICA_HOST = 17;               // mariadb-replica
+    GLOBAL_MARIADB_PORT = 18;                       // 3306
+    GLOBAL_MARIADB_DATABASE_NAME = 19;              // bookkeeping
+    GLOBAL_MARIADB_CHARSET = 20;                    // utf8mb4
+    GLOBAL_MARIADB_COLLATION = 21;                  // utf8mb4_unicode_ci
+    GLOBAL_MARIADB_TIMEOUT = 22;                    // 5s
+    GLOBAL_MARIADB_READ_TIMEOUT = 23;               // 30s
+    GLOBAL_MARIADB_WRITE_TIMEOUT = 24;              // 15s
+    GLOBAL_MARIADB_CONN_MAX_RETRIES = 25;           // 3
+    GLOBAL_MARIADB_CONN_MAX_ELAPSED_TIME = 26;      // 20s
+}
+
+enum CenterEnvKey {
+    CENTER_SERVICE_NAME = 0;                        // center
+}
+
+enum ExchangeRateEnvKey {
+    EXCHANGE_RATE_SERVICE_NAME = 0;                 // exchange_rate
+    EXCHANGE_RATE_API_KEY = 1;                      //
+    EXCHANGE_RATE_RABBITMQ_QUEUE = 2;               // exchange_rate.queue
+    EXCHANGE_RATE_RABBITMQ_KEY = 3;                 // exchange_rate.#
+}
+
+enum TelegramEnvKey {
+    TELEGRAM_SERVICE_NAME = 0;                      // telegram
+    TELEGRAM_TOKEN = 1;                             //
+    TELEGRAM_CHAT_ID = 2;                           //
+    TELEGRAM_RABBITMQ_QUEUE = 3;                    // telegram.queue
+    TELEGRAM_RABBITMQ_KEY = 4;                      // telegram.#
+}
+
+enum EmailEnvKey {
+    EMAIL_SERVICE_NAME = 0;                         // email
+    EMAIL_GOOGLE_CLIENT_ID = 1;                     //
+    EMAIL_GOOGLE_CLIENT_SECRET = 2;                 //
+    EMAIL_RABBITMQ_QUEUE = 3;                       // email.queue
+    EMAIL_RABBITMQ_KEY = 4;                         // email.#
+}
+
+enum BookkeepingEnvKey {
+    BOOKKEEPING_SERVICE_NAME = 0;                   // bookkeeping
+    BOOKKEEPING_RABBITMQ_QUEUE = 1;                 // bookkeeping.queue
+    BOOKKEEPING_RABBITMQ_KEY = 2;                   // bookkeeping.#
+}
