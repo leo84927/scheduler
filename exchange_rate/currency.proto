@@ -1,0 +1,29 @@
+syntax = "proto3";
+
+package leo84927.scheduler.v1;
+option go_package = "scheduler/exchange_rate;exchange_rate";
+
+enum Currency {
+  TWD = 0;
+  USD = 1;
+  JPY = 2;
+  BTC = 3;
+  USDT = 4;
+}
+
+enum CurrencyType {
+  CURRENCY_TYPE_FIAT = 0;
+  CURRENCY_TYPE_CRYPTO = 1;
+}
+
+message CurrencyPair {
+  Currency base = 1 [json_name = "base"];
+  repeated Currency counter = 2 [json_name = "counter"];
+  CurrencyType type = 3 [json_name = "type"];
+}
+
+message ExchangeRate {
+    Currency base_currency = 1 [json_name = "base_currency"];
+    Currency counter_currency = 2 [json_name = "counter_currency"];
+    string rate = 3 [json_name = "rate"];
+}
