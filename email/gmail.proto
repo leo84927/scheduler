@@ -1,0 +1,36 @@
+syntax = "proto3";
+
+package leo84927.scheduler.v1;
+option go_package = "scheduler/email;email";
+
+// LabelIds
+enum GmailLabel {
+    UNREAD = 0;                 // 未讀
+    STARRED = 1;                // 已加星號
+    IMPORTANT = 2;              // 重要郵件
+    TRASH = 3;                  // 垃圾桶
+    SPAM = 4;                   // 垃圾郵件
+    INBOX = 5;                  // 收件匣
+    SENT = 6;                   // 已傳送
+    DRAFT = 7;                  // 草稿
+    CHATS = 8;                  // Google Chat 訊息
+    CATEGORY_PERSONAL = 9;      // 主要
+    CATEGORY_SOCIAL = 10;       // 社群
+    CATEGORY_PROMOTIONS = 11;   // 促銷
+    CATEGORY_UPDATES = 12;      // 最新快訊
+    CATEGORY_FORUMS = 13;       // 論壇
+    HSBC = 14;                  // HSBC 消費紀錄
+    consumption = 15;           // 其它消費紀錄
+}
+
+enum GmailType {
+    CONSUMPTION_RECORD = 0;     // 消費紀錄
+    PROMOTIONS = 1;             // 促銷信件
+    SOCIAL = 2;                 // 社群網路
+}
+
+message CleanInbox {
+    GmailType type = 1 [json_name = "type"];
+    repeated GmailLabel label_ids = 2 [json_name = "label_ids"];
+    int64 max_results = 3 [json_name = "max_results"];
+}
