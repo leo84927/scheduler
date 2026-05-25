@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+package leo84927.scheduler.v1;
+option go_package = "scheduler/rabbitmq;rabbitmq";
+
+enum EnvelopeType {
+    TELEGRAM_ERROR = 0;
+    TELEGRAM_SUCCESS_EXCHANGE_RATE = 1;
+}
+
+message Envelope {
+    EnvelopeType type = 1;
+    string data = 2;
+    int64 sent_at = 3;
+}
