@@ -36,8 +36,8 @@ buf push --label <version>
 - 新增環境變數，在 consul/kv.proto 添加對應的 enum XxxEnvKey
 - 若跨服務之間的 message queue 較複雜，使用 Envelope 時，視情況新增 EnvelopeType
 
-修改完成後執行 buf push && buf push --label <version>  
-各服務執行 go get -u
+修改完成後執行 `buf push && buf push --label <version>`  
+各服務執行 `go get -u buf.build/gen/go/leo84927-proto/scheduler/protocolbuffers/go`
 
 ## Breaking Rule
-根據 buf.yml 設定的 breaking 條件，若做出違反規則的改動，buf push 會被阻擋
+根據 buf.yml 設定的 breaking 條件，若做出違反規則的改動，`buf push` 會被阻擋
