@@ -16,8 +16,8 @@ enum GlobalEnvKey {
     GLOBAL_RABBITMQ_CONN_MAX_ELAPSED_TIME = 9;      // 20s
     GLOBAL_RABBITMQ_TOPOLOGY_MAX_RETRIES = 10;      // 3
     GLOBAL_RABBITMQ_TOPOLOGY_MAX_ELAPSED_TIME = 11; // 20s
-    GLOBAL_ALLOY_HOST = 12;                         // alloy
-    GLOBAL_ALLOY_PORT = 13;                         // 4317
+    GLOBAL_GRAFANA_ENDPOINT = 12;                   //
+    GLOBAL_GRAFANA_TOKEN = 13;                      //
     GLOBAL_MARIADB_USER = 14;                       //
     GLOBAL_MARIADB_PASSWORD = 15;                   //
     GLOBAL_MARIADB_PRIMARY_HOST = 16;               // mariadb-primary
@@ -42,6 +42,7 @@ enum ExchangeRateEnvKey {
     EXCHANGE_RATE_API_KEY = 1;                      //
     EXCHANGE_RATE_RABBITMQ_QUEUE = 2;               // exchange_rate.queue
     EXCHANGE_RATE_RABBITMQ_KEY = 3;                 // exchange_rate.#
+    EXCHANGE_RATE_COINGECKO_API_KEY = 4;            //
 }
 
 enum TelegramEnvKey {
