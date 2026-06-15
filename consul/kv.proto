@@ -51,6 +51,8 @@ enum TelegramEnvKey {
     TELEGRAM_CHAT_ID = 2;                           //
     TELEGRAM_RABBITMQ_QUEUE = 3;                    // telegram.queue
     TELEGRAM_RABBITMQ_KEY = 4;                      // telegram.#
+    TELEGRAM_WEBHOOK_CERT_PEM = 5;                  //
+    TELEGRAM_WEBHOOK_KEY_PEM = 6;                   //
 }
 
 enum EmailEnvKey {
