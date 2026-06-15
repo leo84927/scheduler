@@ -53,6 +53,7 @@ enum TelegramEnvKey {
     TELEGRAM_RABBITMQ_KEY = 4;                      // telegram.#
     TELEGRAM_WEBHOOK_CERT_PEM = 5;                  //
     TELEGRAM_WEBHOOK_KEY_PEM = 6;                   //
+    TELEGRAM_WEBHOOK_PORT = 7;                      // 8443
 }
 
 enum EmailEnvKey {
