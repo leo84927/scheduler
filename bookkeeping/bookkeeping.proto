@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+package leo84927.bookkeeping;
+
+service BookkeepingService {
+  rpc Hello (HelloRequest) returns (HelloResponse);
+}
+
+message HelloRequest {}
+
+message HelloResponse {
+  string message = 1;
+}
