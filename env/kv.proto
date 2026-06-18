@@ -32,6 +32,7 @@ enum GlobalEnvKey {
     GLOBAL_MARIADB_CONN_MAX_RETRIES = 25;           // 3
     GLOBAL_MARIADB_CONN_MAX_ELAPSED_TIME = 26;      // 20s
     GLOBAL_BOOKKEEPING_SOCK_FILE_PATH = 27;         // /tmp/bookkeeping.sock
+    GLOBAL_MARIADB_TLS_CA_PEM = 28;                 //
 }
 
 enum CenterEnvKey {
